@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { boolean } from 'zod';
 import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
@@ -12,7 +11,7 @@ const userSchema = new mongoose.Schema({
     public_id: {type: String, trim: true}
   },
   isEmailVerified:{
-    type: boolean, default: false,
+    type: Boolean, default: false,
   },
   phone: {type: String, trim: true},
   address: {type: String, trim: true},
