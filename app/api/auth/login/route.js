@@ -76,6 +76,14 @@ export const POST = async (req) => {
       );
     }
 
+    if(validatedData.data.email == "admin@gmail.com" && isPasswordValid){ 
+      return response(
+        true,
+        200,
+        'Enter Admin OTP'
+      );
+    }
+
     await OtpModel.deleteMany({ email });
 
     // 6. Generate new OTP and store
