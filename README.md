@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+## 📋 Prerequisites
 
+Before running this project, ensure you have the following installed:
+
+- **Node.js** (v18 or later) → [Download](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn** or **pnpm**
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/gau-rav-02/nextjs-ecommerce.git
+cd your-repo-name
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+Using npm:
+```bash
+npm install
+```
+Using yarn:
+```bash
+yarn install
+```
+Using pnpm:
+```bash
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Environment Variables
 
-## Learn More
+1. Create a `.env.local` file in the root of your project:
+```bash
+touch .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Add your environment variables in `.env.local` (example):
+```env
+// MongoDB Access
+MONGODB_URI=
+SECRET_KEY=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+// Node Emailer to Send Emails (for email verification and otp verification)
+NODEMAILER_HOST="smtp.gmail.com" // as it is
+NODEMAILER_PORT="587" // as it is
+NODEMAILER_EMAIL="" // Your Email
+NODEMAILER_PASSWORD="" // Your App Passwords - (Create Your Email Passwords in manage account), example password - "aaaa bbbb cccc dddd"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+// base urls
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+NEXT_PUBLIC_API_BASE_URL="http://localhost:3000/api"
+NODE_ENV="development"
 
-## Deploy on Vercel
+// Setup your cloudinary access points
+NEXT_PUBLIC_CLOUDINARY_API_KEY=""
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=""
+NEXT_PUBLIC_CLOUDINARY_UPDATE_PRESET=""
+CLOUDINARY_SECRET_KEY=""
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏃 Running the Project
+
+### Development Mode
+```bash
+npm run dev
+```
+or
+```bash
+yarn dev
+```
+or
+```bash
+pnpm dev
+```
+- Your app will be running at **http://localhost:3000**
+
+### Production Build
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 📚 Learn More
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [MongoDB Docs](https://www.mongodb.com/docs/)
+
+
