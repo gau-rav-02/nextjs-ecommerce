@@ -90,8 +90,8 @@ const AppSidebar = () => {
             <SidebarHeader className="border-b h-14 p-0">
                 <div className="flex items-center justify-between px-4 h-full">
                     <div className="flex items-center">
-                        <Image src={logoBlack} alt="Logo Light" height={80} width={logoBlack.width} className="h-[130px] w-auto block dark:hidden" />
-                        <Image src={logoWhite} alt="Logo Dark" height={80} width={logoWhite.width} className="h-[130px] w-auto hidden dark:block" />
+                        <Image src={logoBlack} alt="Logo Light" height={50} width={logoBlack.width} className="h-[50px] w-auto block dark:hidden" />
+                        <Image src={logoWhite} alt="Logo Dark" height={50} width={logoWhite.width} className="h-[50px] w-auto hidden dark:block" />
                     </div>
                     <button type="button" onClick={toggleSidebar} className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-muted" >
                         <IoMdClose size={20} />
