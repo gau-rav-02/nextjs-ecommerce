@@ -2,23 +2,22 @@
 
 import React, { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import axios from "axios";
 import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-import UploadMedia from "@/components/application/admin/UploadMedia";
-import Media from "@/components/application/admin/Media";
+
+
 import { useSearchParams } from "next/navigation";
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
-import { ADMIN_MEDIA_SHOW } from "@/routes/AdminPanelRoute";
+import { ADMIN_DASHBOARD, ADMIN_MEDIA_SHOW } from "@/routes/AdminPanelRoute";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import useDeleteMutation from "@/hooks/useDeleteMutation";
-import { showToast } from "@/lib/toast";
 import ButtonLoading from "@/components/Application/ButtonLoading";
+import UploadMedia from "@/components/Application/Admin/UploadMedia";
 
 const MediaPage = () => {
   const [selectedMedia, setSelectedMedia] = useState([]);
@@ -28,8 +27,8 @@ const MediaPage = () => {
   const queryClient = useQueryClient()
 
   const breadcrumbData = [
-    { href: "/admin/dashboard", label: "Home" },
-    { href: "/admin/media", label: "Media" },
+    { href: {ADMIN_DASHBOARD}, label: "Home" },
+    { href: {ADMIN_MEDIA_SHOW}, label: "Media" },
   ];
 
   useEffect(() => {

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
+
 import {
   Form,
   FormField,
@@ -20,19 +20,16 @@ import {
 } from "@/components/ui/form";
 
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
-import UploadMedia from "@/components/application/admin/UploadMedia";
 import { ADMIN_DASHBOARD, ADMIN_PRODUCT_SHOW } from "@/routes/AdminPanelRoute";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useQuery } from "@tanstack/react-query";
 
 import { showToast } from "@/lib/toast";
 import ButtonLoading from "@/components/Application/ButtonLoading";
 import { zSchema } from "@/lib/zodSchema";
 import useFetch from "@/hooks/useFetch";
-import { get } from "mongoose";
-import { compareSync } from "bcryptjs";
+
 import Select from "@/components/Application/Select";
 import slugify from "slugify";
 import MediaModal from "@/components/Application/Admin/MediaModal";

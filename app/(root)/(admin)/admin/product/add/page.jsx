@@ -20,7 +20,6 @@ import {
 } from "@/components/ui/form";
 
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
-import UploadMedia from "@/components/application/admin/UploadMedia";
 import { ADMIN_DASHBOARD, ADMIN_PRODUCT_SHOW } from "@/routes/AdminPanelRoute";
 
 import { useForm } from "react-hook-form";
