@@ -18,6 +18,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import useDeleteMutation from "@/hooks/useDeleteMutation";
 import ButtonLoading from "@/components/Application/ButtonLoading";
 import UploadMedia from "@/components/Application/Admin/UploadMedia";
+import Media from "@/components/Application/Admin/Media";
 
 const MediaPage = () => {
   const [selectedMedia, setSelectedMedia] = useState([]);
