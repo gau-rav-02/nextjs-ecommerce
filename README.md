@@ -1,4 +1,7 @@
-
+### Admin Login
+- Email: admin@gmail.com
+- Password: Admin@1234
+- OTP: 123456
 
 ## 📋 Prerequisites
 
