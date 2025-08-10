@@ -3,7 +3,7 @@ import { connectDB } from "@/lib/databaseConnection";
 import { catchError, response } from "@/lib/helperFunctions";
 import CategoryModel from "@/models/Category.model";
 import ProductModel from "@/models/Product.model";
-import { nullish } from "zod";
+
 
 
 export async function GET(request) {
@@ -25,18 +25,18 @@ export async function GET(request) {
         const skip = page * limit
 
         const sortOption = searchParams.get('sort') || 'default_sorting'
-        let sortQuery = {}
-        if (sortOption === 'default_sorting') sortQuery = {createdAt: -1}
-        if (sortOption === 'asc') sortQuery = {name: 1}
-        if (sortOption === 'desc') sortQuery = {name: -1}
-        if (sortOption === 'price_low_high') sortQuery = {sellingPrice: 1}
-        if (sortOption === 'price_high_low') sortQuery = {sellingPrice: -1}
+        let sortquery = {}
+        if (sortOption === 'default_sorting') sortquery = {createdAt: -1}
+        if (sortOption === 'asc') sortquery = {name: 1}
+        if (sortOption === 'desc') sortquery = {name: -1}
+        if (sortOption === 'price_low_high') sortquery = {sellingPrice: 1}
+        if (sortOption === 'price_high_low') sortquery = {sellingPrice: -1}
 
 
         let categoryId = []
         if (categorySlug) {
             const slugs = categorySlug.split(',')
-            const categoryData = await CategoryModel.find({ deleted_at: null, $in: slugs }).select('_id').lean()
+            const categoryData = await CategoryModel.find({ deleted_at: null, slug: {$in: slugs} }).select('_id').lean()
             categoryId = categoryData.map(c => c._id)
         }
 
@@ -55,9 +55,9 @@ export async function GET(request) {
         // aggregation pipeline
         const products = await ProductModel.aggregate([
             { $match: matchStage },
-            { $sort: sortQuery },
+            { $sort: sortquery },
             { $skip: skip },
-            { $limit: limit+1 },
+            { $limit: limit + 1 },
             {
                 $lookup: {
                     from: "medias",
