@@ -94,5 +94,6 @@ npm start
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 - [MongoDB Docs](https://www.mongodb.com/docs/)
+- [Cloudinary Docs](https://cloudinary.com/documentation)
 
 
