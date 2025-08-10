@@ -1,7 +1,5 @@
 'use client'
 import ButtonLoading from "@/components/Application/ButtonLoading"
-// import Filter from "@/components/ui/application/website/Filter"
-
 import Filter from "@/components/Application/Website/Filter"
 import ProductBox from "@/components/Application/Website/ProductBox"
 import Sorting from "@/components/Application/Website/Sorting"
@@ -28,11 +26,12 @@ const Shop = () => {
     const [sorting, setSorting] = useState('default_sorting')
 
     const fetchProduct = async (pageParam) => {
-        const {data: getProduct} = await axios.get(`/api/shop/?page=${pageParam}&limit=${limit}&sort=${sorting}&${searchParams}`)
+        const {data: getProduct} = await axios.get(`/api/shop?page=${pageParam}&limit=${limit}&sort=${sorting}&${searchParams}`)
         
         if(!getProduct.success){
             return
         }
+
         return getProduct.data
     }
 
@@ -45,7 +44,6 @@ const Shop = () => {
         }
   
     })
-
 
 
   return (
@@ -80,7 +78,7 @@ const Shop = () => {
                 <ButtonLoading type="button" loading={isFetching} text="Load More" onClick={fetchNextPage}/>
                 :
                 <>
-                    {!isFetching && <span>No mor data tp load</span>}
+                    {!isFetching && <span>No more data to load</span>}
                 </>
             }
         </div>
